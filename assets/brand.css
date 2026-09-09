@@ -1,0 +1,39 @@
+/* ============================================================
+   Wildwood Farm — brand foundation
+   Ink  #52555A  sampled from the logo artwork
+   Teal #80D9D1  from the alternate logo lockup, used as accent
+   ============================================================ */
+:root {
+  /* Core palette */
+  --ink:        oklch(45% 0.009 261);   /* #52555A  body text, logo */
+  --ink-strong: oklch(32% 0.010 261);   /* headings */
+  --ink-soft:   oklch(58% 0.008 261);   /* secondary text */
+
+  --paper:      oklch(97.5% 0.004 106); /* page ground, warm off-white */
+  --paper-deep: oklch(94% 0.006 106);   /* alternating sections */
+  --paper-edge: oklch(90% 0.008 106);   /* hairlines */
+
+  --teal:       oklch(83% 0.087 188);   /* #80D9D1  accent, large areas only */
+  --teal-deep:  oklch(52% 0.078 190);   /* accent that carries small text */
+  --teal-wash:  oklch(95% 0.022 188);   /* tinted panels */
+
+  --line: color-mix(in oklch, var(--ink) 16%, transparent);
+
+  /* Type */
+  --font-display: "Cormorant Garamond", "Source Serif 4", Georgia, serif;
+  --font-body: "Atkinson Hyperlegible", -apple-system, Segoe UI, sans-serif;
+
+  /* Scale */
+  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+  --step-0:  clamp(1rem, 0.96rem + 0.2vw, 1.12rem);
+  --step-1:  clamp(1.3rem, 1.2rem + 0.5vw, 1.6rem);
+  --step-2:  clamp(1.7rem, 1.5rem + 1vw, 2.4rem);
+  --step-3:  clamp(2.2rem, 1.8rem + 2vw, 3.6rem);
+  --step-4:  clamp(2.8rem, 2rem + 3.5vw, 5rem);
+
+  --s-1: 0.5rem;  --s-2: 0.75rem; --s-3: 1rem;   --s-4: 1.5rem;
+  --s-5: 2rem;    --s-6: 3rem;    --s-7: 4.5rem; --s-8: 7rem;
+
+  --measure: 62ch;
+  --radius: 2px;
+}

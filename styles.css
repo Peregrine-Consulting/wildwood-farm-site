@@ -9,6 +9,7 @@ body {
 img, svg, video { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
 h1, h2, h3 { font-family: var(--font-display); font-weight: 500; color: var(--ink-strong); line-height: 1.1; margin: 0; }
+.script { font-family: var(--font-script); font-weight: 400; font-size: 1.25em; }
 p { margin: 0 0 1em; max-width: var(--measure); }
 :focus-visible { outline: 2px solid var(--teal-deep); outline-offset: 3px; border-radius: var(--radius); }
 
@@ -44,9 +45,11 @@ p { margin: 0 0 1em; max-width: var(--measure); }
   font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase;
   border: 1px solid var(--ink); border-radius: var(--radius); transition: background .15s, color .15s;
 }
-.btn--solid { background: var(--ink); color: var(--paper); }
-.btn--solid:hover { background: var(--ink-strong); }
-.btn--ghost:hover { background: var(--ink); color: var(--paper); }
+.btn { border-radius: var(--radius-pill); }
+.btn--solid { background: var(--teal-deep); color: var(--paper); border-color: var(--teal-deep); }
+.btn--solid:hover { background: var(--ink-strong); border-color: var(--ink-strong); }
+.btn--ghost { border-color: var(--teal-deep); color: var(--teal-deep); }
+.btn--ghost:hover { background: var(--teal-deep); color: var(--paper); }
 
 /* ---------- hero ---------- */
 .hero { position: relative; background: var(--ink-strong); color: var(--paper); isolation: isolate; }
@@ -112,7 +115,7 @@ p { margin: 0 0 1em; max-width: var(--measure); }
 .faq details > *:not(summary) { padding-bottom: var(--s-3); }
 
 /* ---------- footer ---------- */
-.site-footer { background: var(--ink-strong); color: var(--paper); padding-block: var(--s-6); }
+.site-footer { background: var(--teal-deep); color: var(--paper); padding-block: var(--s-6); }
 .site-footer a { color: var(--paper); }
 .site-footer .brand strong, .site-footer .brand small { color: var(--paper); }
 .fine { font-size: var(--step--1); color: var(--ink-soft); }

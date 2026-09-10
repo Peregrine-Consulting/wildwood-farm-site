@@ -13,15 +13,18 @@
   --paper-deep: oklch(96% 0.004 260);   /* alternating sections */
   --paper-edge: oklch(91% 0.006 260);   /* hairlines */
 
-  --teal:       oklch(80% 0.13 190);    /* #80D9D1  accent, large areas only */
-  --teal-deep:  oklch(48% 0.13 190);    /* accent that carries small text */
-  --teal-wash:  oklch(95% 0.05 190);    /* tinted panels */
+  --teal:       oklch(74% 0.07 235);    /* soft dusty blue, accent large areas */
+  --teal-deep:  oklch(52% 0.09 235);    /* solid blue: buttons, footer */
+  --teal-wash:  oklch(93% 0.025 235);   /* tinted panels */
 
   --line: color-mix(in oklch, var(--ink) 16%, transparent);
 
   /* Type */
   --font-display: "Cormorant Garamond", "Source Serif 4", Georgia, serif;
   --font-body: "Atkinson Hyperlegible", -apple-system, Segoe UI, sans-serif;
+  --font-script: "Beau Rivage", cursive;
+
+  --radius-pill: 999px;
 
   /* Scale */
   --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);

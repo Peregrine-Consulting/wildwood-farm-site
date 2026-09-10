@@ -1,11 +1,10 @@
 /* ============================================================
    Wildwood Farm — brand foundation
-   Ink  #52555A  sampled from the logo artwork
-   Teal #80D9D1  from the alternate logo lockup, used as accent
+   Blues from the shoreline, greens from the farm.
    ============================================================ */
 :root {
-  /* Core palette */
-  --ink:        oklch(45% 0.009 261);   /* #52555A  body text, logo */
+  /* Core neutrals */
+  --ink:        oklch(45% 0.009 261);   /* body text */
   --ink-strong: oklch(32% 0.010 261);   /* headings */
   --ink-soft:   oklch(58% 0.008 261);   /* secondary text */
 
@@ -13,9 +12,15 @@
   --paper-deep: oklch(96% 0.004 260);   /* alternating sections */
   --paper-edge: oklch(91% 0.006 260);   /* hairlines */
 
-  --teal:       oklch(74% 0.07 235);    /* soft dusty blue, accent large areas */
-  --teal-deep:  oklch(52% 0.09 235);    /* solid blue: buttons, footer */
-  --teal-wash:  oklch(93% 0.025 235);   /* tinted panels */
+  /* Blue — shoreline */
+  --blue:       oklch(74% 0.07 235);    /* accent, large areas */
+  --blue-deep:  oklch(52% 0.09 235);    /* solid: buttons, footer */
+  --blue-wash:  oklch(93% 0.025 235);   /* tinted panels */
+
+  /* Green — farm */
+  --green:      oklch(72% 0.07 155);    /* accent, large areas */
+  --green-deep: oklch(46% 0.075 155);   /* solid, small text */
+  --green-wash: oklch(94% 0.028 150);   /* tinted panels */
 
   --line: color-mix(in oklch, var(--ink) 16%, transparent);
 
@@ -23,8 +28,6 @@
   --font-display: "Cormorant Garamond", "Source Serif 4", Georgia, serif;
   --font-body: "Atkinson Hyperlegible", -apple-system, Segoe UI, sans-serif;
   --font-script: "Beau Rivage", cursive;
-
-  --radius-pill: 999px;
 
   /* Scale */
   --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
@@ -39,4 +42,6 @@
 
   --measure: 62ch;
   --radius: 2px;
+  --radius-soft: 1.25rem;
+  --radius-pill: 999px;
 }

@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "mkdir -p dist && cp -R index.html styles.css robots.txt sitemap.xml assets dist/"
+    "build": "mkdir -p dist && cp -R index.html styles.css robots.txt sitemap.xml assets the-program queer-normative-care dr-hinkley for-families consultation dist/"
   }
 }

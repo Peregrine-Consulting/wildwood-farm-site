@@ -56,7 +56,11 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
   display: flex; align-items: center; gap: var(--s-4);
   padding: var(--s-3) 0; border-bottom: 1px solid var(--line);
 }
-.brand { display: flex; align-items: center; gap: var(--s-2); text-decoration: none; margin-right: auto; }
+.brand { display: flex; align-items: center; gap: var(--s-3); text-decoration: none; margin-right: auto; }
+/* The lily from the logo lockup, paired with live text rather than using the
+   whole lockup: the lockup already contains the name and tagline, and at header
+   size its wordmark would render around 10px tall. Decorative, so alt="". */
+.brand-mark { width: auto; height: 3.5rem; flex: none; }
 .brand strong {
   font-family: var(--font-display); font-size: 1.35rem; font-weight: 400;
   letter-spacing: 0.14em; text-transform: uppercase; display: block; line-height: 1;
@@ -234,6 +238,7 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
 /* ---------- responsive ---------- */
 @media (max-width: 60rem) {
   .site-header { flex-wrap: wrap; row-gap: var(--s-2); }
+  .brand-mark { height: 3rem; }
   .nav { order: 3; width: 100%; flex-wrap: wrap; gap: var(--s-3); }
 }
 @media (max-width: 46rem) {

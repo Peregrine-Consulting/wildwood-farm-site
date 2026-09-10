@@ -8,8 +8,14 @@ body {
 }
 img, svg, video { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
-h1, h2, h3 { font-family: var(--font-display); font-weight: 500; color: var(--ink-strong); line-height: 1.1; margin: 0; }
-.script { font-family: var(--font-script); font-weight: 400; font-size: 1.25em; }
+h1, h2, h3 {
+  font-family: var(--font-display); font-weight: 500; color: var(--ink-strong);
+  line-height: 1.14; letter-spacing: -0.015em; margin: 0;
+}
+.script {
+  font-family: var(--font-script); font-weight: 400;
+  font-size: 1.5em; letter-spacing: 0; line-height: 0.8;
+}
 p { margin: 0 0 1em; max-width: var(--measure); }
 :focus-visible { outline: 2px solid var(--blue-deep); outline-offset: 3px; border-radius: var(--radius); }
 

@@ -24,10 +24,13 @@
 
   --line: color-mix(in oklch, var(--ink) 16%, transparent);
 
-  /* Type */
-  --font-display: "Cormorant Garamond", "Source Serif 4", Georgia, serif;
-  --font-body: "Atkinson Hyperlegible", -apple-system, Segoe UI, sans-serif;
-  --font-script: "Beau Rivage", cursive;
+  /* Type
+     Playfair Display — high-contrast classic serif for display
+     Jost — quiet geometric sans for body, labels and buttons
+     Italianno — refined calligraphic accent, used sparingly */
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-body: "Jost", -apple-system, "Segoe UI", sans-serif;
+  --font-script: "Italianno", cursive;
 
   /* Scale */
   --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);

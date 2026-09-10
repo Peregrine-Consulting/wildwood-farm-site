@@ -9,13 +9,13 @@
   --ink-strong: oklch(32% 0.010 261);   /* headings */
   --ink-soft:   oklch(58% 0.008 261);   /* secondary text */
 
-  --paper:      oklch(97.5% 0.004 106); /* page ground, warm off-white */
-  --paper-deep: oklch(94% 0.006 106);   /* alternating sections */
-  --paper-edge: oklch(90% 0.008 106);   /* hairlines */
+  --paper:      oklch(99% 0.002 260);   /* page ground, bright neutral white */
+  --paper-deep: oklch(96% 0.004 260);   /* alternating sections */
+  --paper-edge: oklch(91% 0.006 260);   /* hairlines */
 
-  --teal:       oklch(83% 0.087 188);   /* #80D9D1  accent, large areas only */
-  --teal-deep:  oklch(52% 0.078 190);   /* accent that carries small text */
-  --teal-wash:  oklch(95% 0.022 188);   /* tinted panels */
+  --teal:       oklch(80% 0.13 190);    /* #80D9D1  accent, large areas only */
+  --teal-deep:  oklch(48% 0.13 190);    /* accent that carries small text */
+  --teal-wash:  oklch(95% 0.05 190);    /* tinted panels */
 
   --line: color-mix(in oklch, var(--ink) 16%, transparent);
 

@@ -30,10 +30,23 @@ p { margin: 0 0 1em; max-width: var(--measure); }
   background: linear-gradient(to bottom, var(--paper) 0%, var(--blue-wash) 12%,
     var(--blue-wash) 88%, var(--paper) 100%);
 }
+/* Dark forest ground. Text inverts to light, and the section still eases in and
+   out of the page rather than butting against it. */
 .section--farm {
-  background: linear-gradient(to bottom, var(--paper) 0%, var(--green-wash) 12%,
-    var(--green-wash) 88%, var(--paper) 100%);
+  /* Fixed-length ramps, shorter than the section padding, so text always lands
+     on solid forest. A percentage ramp grows with the section and can leave the
+     first line sitting in the pale part of the fade. */
+  background-color: var(--forest);
+  background-image:
+    linear-gradient(to bottom, var(--paper), transparent 2rem),
+    linear-gradient(to top, var(--paper), transparent 2rem);
+  color: color-mix(in oklch, var(--paper) 90%, transparent);
 }
+.section--farm h2, .section--farm h3 { color: var(--paper); }
+.section--farm .eyebrow { color: var(--forest-mist); }
+.section--farm .lede { color: color-mix(in oklch, var(--paper) 92%, transparent); }
+.section--farm a { color: var(--paper); text-decoration-color: var(--forest-mist); }
+.section--farm a:hover { text-decoration-color: var(--paper); }
 .eyebrow {
   font-size: var(--step--1); letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--ink-soft); margin: 0 0 var(--s-3);

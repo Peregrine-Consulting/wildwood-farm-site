@@ -21,8 +21,10 @@
   --green:      oklch(72% 0.07 155);    /* accent, large areas */
   --green-deep: oklch(46% 0.075 155);   /* solid, small text */
   --green-wash: oklch(94% 0.028 150);   /* tinted panels */
-  --forest:     oklch(30% 0.045 152);   /* dark forest ground, carries light text */
-  --forest-mist: oklch(72% 0.045 152);  /* light sage for labels on forest */
+  --moss:       oklch(52% 0.075 152);   /* medium green ground, carries light text */
+  --moss-tint:  oklch(96% 0.025 152);   /* barely-green white for labels on moss.
+                                           A mid sage label fails contrast here:
+                                           on a medium ground only near-white passes. */
 
   --line: color-mix(in oklch, var(--ink) 16%, transparent);
 

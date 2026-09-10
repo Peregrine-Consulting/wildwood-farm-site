@@ -47,6 +47,15 @@
   --s-1: 0.5rem;  --s-2: 0.75rem; --s-3: 1rem;   --s-4: 1.5rem;
   --s-5: 2rem;    --s-6: 3rem;    --s-7: 4.5rem; --s-8: 7rem;
 
+  /* Image fades — photos dissolve into the section behind them rather than
+     ending on a hard edge, so the page reads as one continuous surface. */
+  --fade-bottom: linear-gradient(to bottom, #000 66%, rgba(0,0,0,0.55) 85%, transparent 100%);
+  --fade-hero:   linear-gradient(to bottom, #000 84%, rgba(0,0,0,0.5) 94%, transparent 100%);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 0.68, 0.28, 1);
+  --reveal-duration: 0.9s;
+
   --measure: 62ch;
   --radius: 2px;
   --radius-soft: 1.25rem;

@@ -22,9 +22,18 @@ p { margin: 0 0 1em; max-width: var(--measure); }
 .wrap { width: min(100% - 2.5rem, 74rem); margin-inline: auto; }
 .narrow { width: min(100% - 2.5rem, 48rem); margin-inline: auto; }
 .section { padding-block: var(--s-7); }
-.section--tint { background: var(--paper-deep); }
-.section--wash { background: var(--blue-wash); }
-.section--farm { background: var(--green-wash); }
+.section--tint {
+  background: linear-gradient(to bottom, var(--paper) 0%, var(--paper-deep) 10%,
+    var(--paper-deep) 90%, var(--paper) 100%);
+}
+.section--wash {
+  background: linear-gradient(to bottom, var(--paper) 0%, var(--blue-wash) 12%,
+    var(--blue-wash) 88%, var(--paper) 100%);
+}
+.section--farm {
+  background: linear-gradient(to bottom, var(--paper) 0%, var(--green-wash) 12%,
+    var(--green-wash) 88%, var(--paper) 100%);
+}
 .eyebrow {
   font-size: var(--step--1); letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--ink-soft); margin: 0 0 var(--s-3);
@@ -65,15 +74,19 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
 .center .actions { justify-content: center; }
 
 /* ---------- hero ---------- */
-.hero { position: relative; background: var(--ink-strong); color: var(--paper); isolation: isolate; }
+.hero { position: relative; background: var(--blue-wash); color: var(--paper); isolation: isolate; }
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background: linear-gradient(100deg,
     color-mix(in oklch, var(--ink-strong) 65%, transparent) 0%,
     color-mix(in oklch, var(--ink-strong) 42%, transparent) 45%,
     color-mix(in oklch, var(--ink-strong) 10%, transparent) 100%);
+  -webkit-mask-image: var(--fade-hero); mask-image: var(--fade-hero);
 }
-.hero img { width: 100%; height: clamp(24rem, 62vh, 40rem); object-fit: cover; }
+.hero img {
+  width: 100%; height: clamp(24rem, 62vh, 40rem); object-fit: cover;
+  -webkit-mask-image: var(--fade-hero); mask-image: var(--fade-hero);
+}
 .hero-inner {
   position: absolute; inset: 0; display: grid; align-content: center; z-index: 2;
   width: min(100% - 2.5rem, 74rem); margin-inline: auto; left: 0; right: 0;
@@ -91,7 +104,10 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
 .page-head .lede { margin-top: var(--s-4); }
 
 /* ---------- strip ---------- */
-.strip { background: var(--blue-wash); color: var(--ink-strong); padding-block: var(--s-6); }
+.strip {
+  background: linear-gradient(to bottom, var(--blue-wash) 0%, var(--blue-wash) 78%, var(--paper) 100%);
+  color: var(--ink-strong); padding-block: var(--s-6) var(--s-7);
+}
 .strip p {
   margin: 0 auto; max-width: 46ch; font-family: var(--font-display);
   font-weight: var(--weight-display); font-size: var(--step-2);
@@ -117,7 +133,8 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
 .media figure { margin: 0; }
 .media img {
   width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
-  border-radius: var(--radius-soft); background: var(--paper-deep);
+  border-radius: var(--radius-soft) var(--radius-soft) 0 0;
+  -webkit-mask-image: var(--fade-bottom); mask-image: var(--fade-bottom);
 }
 .media h3 { font-size: var(--step-1); margin-top: var(--s-3); }
 .media p { margin-top: var(--s-1); max-width: 34ch; }
@@ -149,9 +166,31 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
 .fine { font-size: var(--step--1); color: var(--ink-soft); }
 .site-footer .fine { color: color-mix(in oklch, var(--paper) 78%, transparent); }
 
+/* ---------- full-bleed imagery ---------- */
+.bleed { width: 100vw; margin-left: calc(50% - 50vw); max-width: none; }
+.feature-img {
+  width: 100%; aspect-ratio: 16 / 7; object-fit: cover;
+  -webkit-mask-image: var(--fade-bottom); mask-image: var(--fade-bottom);
+}
+@media (max-width: 46rem) {
+  .feature-img { aspect-ratio: 4 / 3; }
+}
+
+/* ---------- scroll reveals ----------
+   .reveal is applied by assets/reveal.js, so with JS unavailable nothing is
+   ever hidden. Elements already in view are revealed in the same tick. */
+.reveal {
+  opacity: 0; transform: translateY(1.5rem);
+  transition: opacity var(--reveal-duration) var(--ease-out),
+              transform var(--reveal-duration) var(--ease-out);
+  will-change: opacity, transform;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
 }
 
 /* ---------- responsive ---------- */

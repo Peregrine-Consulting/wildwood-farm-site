@@ -87,7 +87,23 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
 .center .actions { justify-content: center; }
 
 /* ---------- hero ---------- */
-.hero { position: relative; background: var(--ink-strong); color: var(--paper); isolation: isolate; }
+/* The copy is the only thing in flow, so the hero is never shorter than its own
+   content: min-height sets the floor, the copy pushes it taller when it needs to.
+   The photo and overlay are taken out of flow so they fill whatever height the
+   hero settles on without contributing any of their own — a grid item with
+   height:100% in an auto row falls back to the image's intrinsic aspect ratio
+   and drags the hero far taller than the clamp allows. */
+.hero {
+  position: relative; isolation: isolate;
+  display: grid; align-content: center;
+  min-height: clamp(24rem, 62vh, 40rem);
+  background: var(--ink-strong); color: var(--paper);
+}
+.hero > img {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   /* Weighted to the left, where the headline sits. The vine photo is bright
@@ -97,10 +113,10 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
     color-mix(in oklch, var(--ink-strong) 58%, transparent) 45%,
     color-mix(in oklch, var(--ink-strong) 14%, transparent) 100%);
 }
-.hero img { width: 100%; height: clamp(24rem, 62vh, 40rem); object-fit: cover; }
 .hero-inner {
-  position: absolute; inset: 0; display: grid; align-content: center; z-index: 2;
-  width: min(100% - 2.5rem, 74rem); margin-inline: auto; left: 0; right: 0;
+  position: relative; z-index: 2;
+  width: min(100% - 2.5rem, 74rem); margin-inline: auto;
+  padding-block: var(--s-6);
 }
 .hero .eyebrow { color: color-mix(in oklch, var(--blue) 70%, white); }
 .hero h1 { color: var(--paper); font-size: var(--step-4); max-width: 22ch; margin-bottom: var(--s-4); }
@@ -217,9 +233,8 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
 }
 @media (max-width: 46rem) {
   :root { --s-7: 3rem; }
-  .hero { display: grid; }
-  .hero img { grid-area: 1/1; height: clamp(18rem, 50vh, 26rem); }
-  .hero-inner { position: static; grid-area: 1/1; padding-block: var(--s-5); align-self: center; }
+  .hero { min-height: clamp(18rem, 50vh, 26rem); }
+  .hero-inner { padding-block: var(--s-5); }
   .hero .eyebrow { letter-spacing: 0.1em; font-size: 0.72rem; }
   .hero::after { background: color-mix(in oklch, var(--ink-strong) 74%, transparent); }
   .hero h1 { font-size: var(--step-3); }

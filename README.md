@@ -36,7 +36,7 @@ subpage routes resolve. `npm run build` copies everything into `dist/` for Verce
 | `hero-vine.jpg` | Homepage hero (no fade, per client direction) |
 | `farm-field.jpg` | Farm page full-bleed feature |
 | `barn-tree.jpg` | Farm page, history section |
-| `goats.jpg` / `chickens.jpg` | Animal grid, homepage and farm page |
+| `goats.jpg` / `chickens.jpg` / `therapy-dogs.jpg` | Animal grid, homepage and farm page |
 | `og.jpg` | Social share card, 1200x630, cropped from the vine photo |
 | `hero-barns.jpg` | Currently unused; kept as a spare |
 
@@ -46,8 +46,6 @@ lazy-loaded.
 
 ## Outstanding before launch
 
-- **Therapy dog photo**: `assets/img/placeholder-therapy-dogs.svg` is still a labeled
-  placeholder. The goats and chickens now use real photography.
 - **Hero resolution**: `assets/img/hero-vine.jpg` is 2048px wide, which is fine at 1x but
   soft on large retina displays. A 2500px+ original would be better.
 - **Dr. Hinkley bio**: the previous copy was built around twenty years as a Catholic priest.

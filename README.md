@@ -29,11 +29,27 @@ subpage routes resolve. `npm run build` copies everything into `dist/` for Verce
 | `/for-families/` | Family programme and family FAQ |
 | `/consultation/` | Free first conversation, finding the right fit |
 
+## Imagery
+
+| File | Used for |
+| --- | --- |
+| `hero-vine.jpg` | Homepage hero (no fade, per client direction) |
+| `farm-field.jpg` | Farm page full-bleed feature |
+| `barn-tree.jpg` | Farm page, history section |
+| `goats.jpg` / `chickens.jpg` | Animal grid, homepage and farm page |
+| `og.jpg` | Social share card, 1200x630, cropped from the vine photo |
+| `hero-barns.jpg` | Currently unused; kept as a spare |
+
+Photos are plain JPEG; no WebP tooling was available on this machine, so they were
+resized to roughly their displayed dimensions instead. Everything but the hero is
+lazy-loaded.
+
 ## Outstanding before launch
 
-- **Animal photos**: `assets/img/placeholder-goats.svg`, `placeholder-chickens.svg` and
-  `placeholder-therapy-dogs.svg` are labeled placeholders awaiting real photography.
-- **Hero image**: `assets/img/hero-barns.jpg` to be replaced with a 2500px+ frame from the second shoot.
+- **Therapy dog photo**: `assets/img/placeholder-therapy-dogs.svg` is still a labeled
+  placeholder. The goats and chickens now use real photography.
+- **Hero resolution**: `assets/img/hero-vine.jpg` is 2048px wide, which is fine at 1x but
+  soft on large retina displays. A 2500px+ original would be better.
 - **Dr. Hinkley bio**: the previous copy was built around twenty years as a Catholic priest.
   All religious references have been removed; the replacement copy needs his sign-off.
 - **Consultation form**: currently phone only. A form handler and contact email need wiring.

@@ -87,19 +87,17 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
 .center .actions { justify-content: center; }
 
 /* ---------- hero ---------- */
-.hero { position: relative; background: var(--blue-wash); color: var(--paper); isolation: isolate; }
+.hero { position: relative; background: var(--ink-strong); color: var(--paper); isolation: isolate; }
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  /* Weighted to the left, where the headline sits. The vine photo is bright
+     through the middle, so the ramp holds longer than a darker image needs. */
   background: linear-gradient(100deg,
-    color-mix(in oklch, var(--ink-strong) 65%, transparent) 0%,
-    color-mix(in oklch, var(--ink-strong) 42%, transparent) 45%,
-    color-mix(in oklch, var(--ink-strong) 10%, transparent) 100%);
-  -webkit-mask-image: var(--fade-hero); mask-image: var(--fade-hero);
+    color-mix(in oklch, var(--ink-strong) 78%, transparent) 0%,
+    color-mix(in oklch, var(--ink-strong) 58%, transparent) 45%,
+    color-mix(in oklch, var(--ink-strong) 14%, transparent) 100%);
 }
-.hero img {
-  width: 100%; height: clamp(24rem, 62vh, 40rem); object-fit: cover;
-  -webkit-mask-image: var(--fade-hero); mask-image: var(--fade-hero);
-}
+.hero img { width: 100%; height: clamp(24rem, 62vh, 40rem); object-fit: cover; }
 .hero-inner {
   position: absolute; inset: 0; display: grid; align-content: center; z-index: 2;
   width: min(100% - 2.5rem, 74rem); margin-inline: auto; left: 0; right: 0;
@@ -183,6 +181,12 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
 .bleed { width: 100vw; margin-left: calc(50% - 50vw); max-width: none; }
 .feature-img {
   width: 100%; aspect-ratio: 16 / 7; object-fit: cover;
+  -webkit-mask-image: var(--fade-bottom); mask-image: var(--fade-bottom);
+}
+.inset-img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  border-radius: var(--radius-soft) var(--radius-soft) 0 0;
+  margin: var(--s-5) 0 var(--s-6);
   -webkit-mask-image: var(--fade-bottom); mask-image: var(--fade-bottom);
 }
 @media (max-width: 46rem) {

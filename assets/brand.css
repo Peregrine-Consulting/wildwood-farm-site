@@ -21,10 +21,12 @@
   --green:      oklch(72% 0.07 155);    /* accent, large areas */
   --green-deep: oklch(46% 0.075 155);   /* solid, small text */
   --green-wash: oklch(94% 0.028 150);   /* tinted panels */
-  --moss:       oklch(52% 0.075 152);   /* medium green ground, carries light text */
-  --moss-tint:  oklch(96% 0.025 152);   /* barely-green white for labels on moss.
-                                           A mid sage label fails contrast here:
-                                           on a medium ground only near-white passes. */
+  /* Faded foliage green for the farm section. Hue 124 is sampled from the farm
+     photography itself: the vine, grass and field greens average hue 117-131,
+     where the previous 152 sat noticeably blue of them. Held light because at
+     this hue a fade past ~55% lightness cannot carry white text, so the section
+     runs dark type on a soft ground instead. */
+  --moss:       oklch(86% 0.042 124);
 
   --line: color-mix(in oklch, var(--ink) 16%, transparent);
 

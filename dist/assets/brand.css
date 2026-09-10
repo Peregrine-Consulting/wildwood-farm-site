@@ -25,12 +25,16 @@
   --line: color-mix(in oklch, var(--ink) 16%, transparent);
 
   /* Type
-     Playfair Display — high-contrast classic serif for display
+     Cormorant Garamond Light — fine-stroked classic serif for display
      Jost — quiet geometric sans for body, labels and buttons
-     Italianno — refined calligraphic accent, used sparingly */
-  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+     Italianno — refined calligraphic accent, used sparingly
+     Weights are kept light deliberately; heavier cuts read as blotchy at display sizes. */
+  --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Jost", -apple-system, "Segoe UI", sans-serif;
   --font-script: "Italianno", cursive;
+
+  --weight-display: 300;
+  --weight-lede: 300;
 
   /* Scale */
   --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);

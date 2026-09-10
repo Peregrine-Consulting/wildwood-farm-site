@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Placeholder image">
+  <rect width="400" height="500" fill="#98977f"/>
+  <rect x="14" y="14" width="372" height="472" fill="none" stroke="#282719" stroke-width="1.25" stroke-dasharray="9 7" opacity="0.45"/>
+  <text x="200" y="238" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#282719">The therapy dogs</text>
+  <text x="200" y="274" text-anchor="middle" font-family="Verdana, sans-serif" font-size="12.5" letter-spacing="2.5" fill="#282719" opacity="0.75">PHOTO PLACEHOLDER</text>
+</svg>

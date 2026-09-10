@@ -1,0 +1,68 @@
+/* ============================================================
+   Wildwood Farm — brand foundation
+   Blues from the shoreline, greens from the farm.
+   ============================================================ */
+:root {
+  /* Core neutrals */
+  --ink:        oklch(45% 0.009 261);   /* body text */
+  --ink-strong: oklch(32% 0.010 261);   /* headings */
+  --ink-soft:   oklch(58% 0.008 261);   /* secondary text */
+
+  --paper:      oklch(99% 0.002 260);   /* page ground, bright neutral white */
+  --paper-deep: oklch(96% 0.004 260);   /* alternating sections */
+  --paper-edge: oklch(91% 0.006 260);   /* hairlines */
+
+  /* Blue — shoreline */
+  --blue:       oklch(74% 0.07 235);    /* accent, large areas */
+  --blue-deep:  oklch(52% 0.09 235);    /* solid: buttons, footer */
+  --blue-wash:  oklch(93% 0.025 235);   /* tinted panels */
+
+  /* Green — farm */
+  --green:      oklch(72% 0.07 155);    /* accent, large areas */
+  --green-deep: oklch(46% 0.075 155);   /* solid, small text */
+  --green-wash: oklch(94% 0.028 150);   /* tinted panels */
+  /* Faded foliage green for the farm section. Hue 124 is sampled from the farm
+     photography itself: the vine, grass and field greens average hue 117-131,
+     where the previous 152 sat noticeably blue of them. Held light because at
+     this hue a fade past ~55% lightness cannot carry white text, so the section
+     runs dark type on a soft ground instead. */
+  --moss:       oklch(86% 0.042 124);
+
+  --line: color-mix(in oklch, var(--ink) 16%, transparent);
+
+  /* Type
+     Cormorant Garamond Light — fine-stroked classic serif for display
+     Jost — quiet geometric sans for body, labels and buttons
+     Italianno — refined calligraphic accent, used sparingly
+     Weights are kept light deliberately; heavier cuts read as blotchy at display sizes. */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Jost", -apple-system, "Segoe UI", sans-serif;
+  --font-script: "Italianno", cursive;
+
+  --weight-display: 300;
+  --weight-lede: 300;
+
+  /* Scale */
+  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+  --step-0:  clamp(1rem, 0.96rem + 0.2vw, 1.12rem);
+  --step-1:  clamp(1.3rem, 1.2rem + 0.5vw, 1.6rem);
+  --step-2:  clamp(1.7rem, 1.5rem + 1vw, 2.4rem);
+  --step-3:  clamp(2.2rem, 1.8rem + 2vw, 3.6rem);
+  --step-4:  clamp(2.8rem, 2rem + 3.5vw, 5rem);
+
+  --s-1: 0.5rem;  --s-2: 0.75rem; --s-3: 1rem;   --s-4: 1.5rem;
+  --s-5: 2rem;    --s-6: 3rem;    --s-7: 4.5rem; --s-8: 7rem;
+
+  /* Image fades — photos dissolve into the section behind them rather than
+     ending on a hard edge, so the page reads as one continuous surface. */
+  --fade-bottom: linear-gradient(to bottom, #000 66%, rgba(0,0,0,0.55) 85%, transparent 100%);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 0.68, 0.28, 1);
+  --reveal-duration: 0.9s;
+
+  --measure: 62ch;
+  --radius: 2px;
+  --radius-soft: 1.25rem;
+  --radius-pill: 999px;
+}

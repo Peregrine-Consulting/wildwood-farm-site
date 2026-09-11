@@ -201,9 +201,7 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
 .portrait {
   width: min(100%, 26rem);
   aspect-ratio: 4 / 5; object-fit: cover;
-  /* His face sits high in the frame, with a goat filling the foreground, so the
-     crop is biased upward rather than centred. */
-  object-position: 50% 28%;
+  object-position: 50% 50%;
   border-radius: var(--radius-soft) var(--radius-soft) 0 0;
   margin: var(--s-5) 0 var(--s-6);
   -webkit-mask-image: var(--fade-bottom); mask-image: var(--fade-bottom);

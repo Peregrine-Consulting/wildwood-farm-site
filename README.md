@@ -37,7 +37,7 @@ subpage routes resolve. `npm run build` copies everything into `dist/` for Verce
 | `farm-field.jpg` | Farm page full-bleed feature |
 | `barn-tree.jpg` | Farm page, history section |
 | `goats.jpg` / `chickens.jpg` / `therapy-dogs.jpg` | Animal grid, homepage and farm page |
-| `dr-hinkley.jpg` | Portrait on the Dr. Hinkley page. Informal shot; his face sits high-right in the frame with a goat in the foreground, so `.portrait` biases the crop upward |
+| `dr-hinkley.jpg` | Portrait on the Dr. Hinkley page. Supplied by the client and confirmed by them as Dr. Hinkley; note it carries no camera EXIF and is an exact 2000x2000 square, unlike the other photography here |
 | `logo-mark.png` | The lily from the logo lockup, used in the header beside the live wordmark |
 | `og.jpg` | Social share card, 1200x630, cropped from the vine photo |
 | `hero-barns.jpg` | Currently unused; kept as a spare |

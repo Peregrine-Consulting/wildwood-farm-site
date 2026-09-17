@@ -26,7 +26,40 @@ A static marketing site for **Recovery at Wildwood Farm** (Dr. Michael Hinkley),
 an extended sober living program. Hand-written HTML and CSS, no framework, no
 build step beyond a file copy.
 
-Deployed on Vercel from `main`.
+## Deployment: manual, not automatic
+
+**Live at https://wilwoodwebsite.vercel.app** (alias of
+`wilwoodwebsite-isha-peregrine.vercel.app`). Public, no auth.
+
+**Vercel is not connected to this GitHub repository.** There is no Git integration,
+no webhook, and no deployment checks on pull requests. Merging a PR to `main`
+deploys **nothing**.
+
+Every deployment so far has been a manual Vercel CLI run from this folder on Isha's
+laptop, under the personal scope `isha-peregrine`, project `wilwood_website` (note
+the misspelling, missing a `d`). `vercel.json` and `npm run build` are real and do
+run, but only when someone invokes a deploy by hand:
+
+```bash
+npx vercel --prod
+```
+
+Consequences to keep in mind:
+
+- `main` can be, and has been, ahead of what is live. Always check the live site
+  rather than assuming `main` reflects it.
+- A merged PR is not a shipped change. Deploying is a separate, deliberate step.
+- Deploys depend on one machine's stored Vercel credentials. Nobody else can ship.
+
+Connecting the Vercel GitHub integration would make merges deploy automatically and
+is worth doing, but installing it needs admin on the repo. The `deo-222` account has
+push and triage only, so it requires a Peregrine-Consulting owner.
+
+## Not to be confused with the client's live site
+
+`recoveryatwildwoodfarm.com` is the client's existing **Wix** site. It is unrelated
+to this repository, is not served from it, and must never be assumed to be a deploy
+target. This repo is the rebuild concept.
 
 ## Layout
 

@@ -4,3 +4,5 @@ node_modules
 
 .DS_Store
 Claude outputs/
+wildwood-repo-backup.bundle
+wildwood-client-changes.patch

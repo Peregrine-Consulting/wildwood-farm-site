@@ -26,7 +26,7 @@
      where the previous 152 sat noticeably blue of them. Held light because at
      this hue a fade past ~55% lightness cannot carry white text, so the section
      runs dark type on a soft ground instead. */
-  --moss:       oklch(86% 0.042 124);
+  --moss:       oklch(86% 0.042 124);  /* farm section: desaturated olive-sage, matched to the photography (deliberately flatter and yellower than --green) */
 
   --line: color-mix(in oklch, var(--ink) 16%, transparent);
 

@@ -7,8 +7,12 @@ subpage routes resolve. `npm run build` copies everything into `dist/` for Verce
 
 ## Direction
 
-- Blues and greens, bright and airy; no tan or muted/faded tones
-- Type: Playfair Display (display), Jost (body/labels), Italianno (script accent)
+- Blues and greens on a bright neutral ground. Two deliberate exceptions: the farm
+  section uses `--moss`, a desaturated olive-sage matched to the photography, and the
+  hero sits on a near-black behind its photograph. The original direction said no
+  muted or faded tones; both departures were intentional design decisions
+- Type: Cormorant Garamond (display), Jost (body/labels), Italianno (script accent).
+  Playfair Display was the original direction and is no longer used anywhere
 - Warm, sincere tone matching recoveryatwildwoodfarm.com; never arch or sarcastic
 - Minimal copy on the homepage; detail lives on the interior pages
 - Queer-normative recovery positioning, kept broad and relatable rather than niche
@@ -37,7 +41,7 @@ subpage routes resolve. `npm run build` copies everything into `dist/` for Verce
 | `farm-field.jpg` | Farm page full-bleed feature |
 | `barn-tree.jpg` | Farm page, history section |
 | `goats.jpg` / `chickens.jpg` / `therapy-dogs.jpg` | Animal grid, homepage and farm page |
-| `dr-hinkley.jpg` | Portrait on the Dr. Hinkley page. Supplied by the client and confirmed by them as Dr. Hinkley; note it carries no camera EXIF and is an exact 2000x2000 square, unlike the other photography here |
+| `dr-hinkley.jpg` | Portrait on the Dr. Hinkley page, 720x900. The client-supplied headshot, which replaced an earlier file that was an exact 2000x2000 square with no camera EXIF. This one carries an Exif block and a Photoshop marker but still no camera model, so it has been through an editor rather than straight off a camera |
 | `logo-mark.png` | The lily from the logo lockup, used in the header beside the live wordmark |
 | `og.jpg` | Social share card, 1200x630, cropped from the vine photo |
 | `hero-barns.jpg` | Currently unused; kept as a spare |
@@ -68,6 +72,6 @@ disappears on the blue footer, which is why the footer brand remains text-only.
 - **Consultation form**: currently phone only. A form handler and contact email need wiring.
 - **Logo as vector**: an SVG of the lily mark, and a light/reversed version for use on
   the blue footer and dark hero.
-- **Animals on the farm**: the live site lists egg chickens, Berkshire pigs and lambs;
-  goats and therapy dogs are featured per client direction. Confirm the current animals.
+- ~~**Animals on the farm**~~: resolved in the 16 September review. Pigs are out, and
+  the site now lists laying hens, goats, lambs and Macchiato the therapy dog.
 - Clinical, licensing and privacy language to be reviewed.

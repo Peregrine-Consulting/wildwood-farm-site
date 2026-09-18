@@ -175,13 +175,34 @@ These are client directions, not suggestions. Violating them creates real proble
 
 ## Design
 
-- Palette: blues and greens, bright and airy. No tan, no muted or faded tones.
-- Type: Playfair Display (display), Jost (body and labels), Italianno (script
-  accent), at light weights and fine strokes.
+- Type: **Cormorant Garamond** (display), Jost (body and labels), Italianno
+  (script accent), at light weights and fine strokes. Playfair Display was the
+  original direction, was replaced by the current type system, and appears nowhere
+  in the codebase. Do not reintroduce it.
+- Palette: blues and greens on a bright neutral ground, with two deliberate
+  exceptions noted below.
 - Minimal copy on the homepage; detail belongs on interior pages.
-- Colours and type scale live in `assets/brand.css` — change tokens there rather
+- Colours and type scale live in `assets/brand.css` - change tokens there rather
   than hard-coding values in `styles.css`.
-- Everything but the hero image is lazy-loaded.
+- Content images are lazy-loaded. The hero and the header logo are eager, which is
+  intentional since both are above the fold.
+- `.media img`, `.feature-img`, `.portrait` and `.inset-img` carry a
+  `--fade-bottom` mask, so those images fade out at the base. The hero does **not**,
+  per explicit client direction.
+
+### The palette exceptions are intentional
+
+The original client direction was "bright and airy, no tan or muted/faded tones".
+Two places knowingly depart from it, both by design decision rather than drift:
+
+- The farm section uses `--moss: oklch(86% 0.042 124)`, a desaturated olive-sage
+  matched to the photography. Chroma `0.042` and hue `124` make it markedly flatter
+  and yellower than the other greens, which sit at hue `155`. The commit is
+  "Match the farm green to the photography, faded".
+- The hero sits on `--ink-strong`, a near-black, behind the photograph.
+
+Neither is a bug and neither needs reporting as one. If the palette is revisited,
+treat these as decisions to argue with rather than mistakes to correct.
 
 ## Known outstanding work
 

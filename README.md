@@ -39,7 +39,8 @@ subpage routes resolve. `npm run build` copies everything into `dist/` for Verce
 | --- | --- |
 | `hero-vine.jpg` | Homepage hero (no fade, per client direction) |
 | `farm-field.jpg` | Farm page full-bleed feature |
-| `barn-tree.jpg` | Farm page, history section |
+| `farmhouse.jpg` | Farm page, history section. The yellow farmhouse front, requested by the client in the 16 September review |
+| `barn-tree.jpg` | Currently unused; replaced by `farmhouse.jpg` and kept as a spare |
 | `goats.jpg` / `chickens.jpg` / `therapy-dogs.jpg` | Animal grid, homepage and farm page |
 | `dr-hinkley.jpg` | Portrait on the Dr. Hinkley page, 720x900. The client-supplied headshot, which replaced an earlier file that was an exact 2000x2000 square with no camera EXIF. This one carries an Exif block and a Photoshop marker but still no camera model, so it has been through an editor rather than straight off a camera |
 | `logo-mark.png` | The lily from the logo lockup, used in the header beside the live wordmark |

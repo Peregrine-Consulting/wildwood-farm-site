@@ -191,6 +191,9 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
 .site-footer .nav { flex-direction: column; gap: var(--s-2); }
 .fine { font-size: var(--step--1); color: var(--ink-soft); }
 .site-footer .fine { color: color-mix(in oklch, var(--paper) 78%, transparent); }
+.site-footer .social { display: flex; flex-wrap: wrap; gap: var(--s-4); margin-top: var(--s-3); }
+.site-footer .social a { text-decoration: none; border-bottom: 1px solid color-mix(in oklch, var(--paper) 45%, transparent); padding-bottom: 2px; }
+.site-footer .social a:hover { border-bottom-color: var(--paper); }
 
 /* ---------- full-bleed imagery ---------- */
 .bleed { width: 100vw; margin-left: calc(50% - 50vw); max-width: none; }

@@ -51,9 +51,42 @@ Consequences to keep in mind:
 - A merged PR is not a shipped change. Deploying is a separate, deliberate step.
 - Deploys depend on one machine's stored Vercel credentials. Nobody else can ship.
 
-Connecting the Vercel GitHub integration would make merges deploy automatically and
-is worth doing, but installing it needs admin on the repo. The `deo-222` account has
-push and triage only, so it requires a Peregrine-Consulting owner.
+### Manual deploys are the deliberate choice, not a gap
+
+As of 17 September 2026 the decision is to **keep deploying manually**. Connecting
+the Vercel GitHub integration was investigated and set aside for now; it also needs
+a Peregrine-Consulting owner to install the Vercel GitHub App, since `deo-222` has
+push and triage but not admin. Do not treat manual deploys as a defect to be fixed
+in passing, and do not run `vercel git connect` without being asked.
+
+The cost of that choice is that **`vercel --prod` ships whatever is in the working
+directory at that moment**, not what is on `main`. A deploy from a stale or
+half-finished checkout silently republishes old copy over good copy. This has
+already happened once in each direction.
+
+So deploy by this procedure, every time:
+
+```bash
+git checkout main && git pull        # ship main, not whatever is lying around
+git status                           # must be clean; stash or commit first
+npm run build                        # regenerate dist/
+npx vercel --prod                    # publish
+```
+
+Then verify against the live URL rather than trusting the deploy output, because a
+successful deploy of the wrong content still reports success:
+
+```bash
+curl -s https://wilwoodwebsite.vercel.app | grep -c Macchiato
+```
+
+A deploy is not finished until the live page has been checked. If you deploy from a
+branch rather than `main` for a genuine reason, say so explicitly, and get `main`
+caught up straight after so the next person's deploy does not undo it.
+
+Preview deploys do not need the GitHub integration either. `npx vercel` without
+`--prod` publishes to its own URL and leaves production untouched, which is the way
+to get client sign-off on copy before it goes live.
 
 ## Not to be confused with the client's live site
 
@@ -84,8 +117,9 @@ subpage links.
 it on deploy, so **the live site is always built fresh from source**.
 
 But `dist/` is *also* committed to the repository, which means it silently drifts
-out of date whenever someone edits source without rebuilding. It is currently
-stale on the `client-review-16-sep` branch for exactly this reason.
+out of date whenever someone edits source without rebuilding. It has already gone
+stale this way once, when the 16 September review edited all seven source pages and
+left the tracked build output untouched.
 
 Therefore:
 
@@ -131,7 +165,9 @@ These are client directions, not suggestions. Violating them creates real proble
 - **No pricing or cost.** Calls to action lead to a free consultation about fit
   and needs, never to a price.
 - **Language:** "farmstead" or "living farm", never "working farm". The property
-  is two acres. The therapy dog is Makiato. No pigs.
+  is two acres. The therapy dog is **Macchiato** - note the spelling. The farm's
+  dogs are coffee-named and the removed one was Cappuccino, so "Makiato", which
+  came out of the meeting transcript phonetically, is wrong. No pigs.
 - **Tone:** warm and sincere, never arch or sarcastic.
 - **No em dashes in site copy.** This was an explicit client request and was
   applied across the site in its own commit.

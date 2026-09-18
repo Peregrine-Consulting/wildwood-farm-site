@@ -206,8 +206,25 @@ These are client directions, not suggestions. Violating them creates real proble
   dogs are coffee-named and the removed one was Cappuccino, so "Makiato", which
   came out of the meeting transcript phonetically, is wrong. No pigs.
 - **Tone:** warm and sincere, never arch or sarcastic.
-- **No em dashes in site copy.** This was an explicit client request and was
-  applied across the site in its own commit.
+- **No em dashes in site copy.** This was an explicit client request. They can hide
+  as `&mdash;` entities rather than literal characters, which is how seven survived
+  the commit meant to remove them and how an audit grepping only for `—` reported
+  the site clean. Check for both:
+  `grep -rn '&mdash;\|&#8212;\|—' --include='*.html' . | grep -v dist/`
+- **Gloss clinical jargon inline, on first use.** The audience is families and
+  people considering the program, not clinicians, so never leave a term to be
+  looked up. Two forms, both approved by the client:
+  - A term needing a definition: `<term>, meaning <plain-English gloss>`, as in
+    "dual diagnosis, meaning addiction and a mental health condition together".
+    Do **not** use a bare comma here. "dual diagnosis, addiction and a mental
+    health condition" reads as a list of three separate things.
+  - An acronym: expand it with the acronym in brackets after, as in "partial
+    hospitalization and intensive outpatient care (PHP and IOP)" and "the
+    Substance Abuse and Mental Health Services Administration (SAMHSA)".
+
+  Do not reintroduce a bare `PHP`, `IOP` or `SAMHSA` into prose. All three were
+  unexpanded site-wide, including in the footer on every page, until 17 September
+  2026.
 - Queer-normative positioning, kept broad and relatable rather than niche.
 
 ## Design

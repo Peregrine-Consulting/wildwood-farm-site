@@ -64,29 +64,49 @@ directory at that moment**, not what is on `main`. A deploy from a stale or
 half-finished checkout silently republishes old copy over good copy. This has
 already happened once in each direction.
 
-So deploy by this procedure, every time:
+### "Production" here is the client's review environment
+
+This matters more than it sounds. `wilwoodwebsite.vercel.app` is where **the client
+reviews work**, and the review happens *after* deploying, not before. Dr. Hinkley
+looks at the Vercel URL. The public site the business actually runs on is still Wix
+at `recoveryatwildwoodfarm.com`, untouched by anything here.
+
+So deploying is not publishing, and unreviewed copy on the Vercel URL is the normal
+state of things rather than an incident. Deploy a working branch so the client can
+see a proposed change: that is the intended workflow, not a shortcut. Do not stall a
+deploy waiting for sign-off that is meant to happen on the deployed page, and do not
+warn about "publishing unreviewed copy" while this is the arrangement.
+
+**This flips at cutover.** Once `recoveryatwildwoodfarm.com` points here, that same
+command publishes to the real public site, and the caution above becomes real. At
+that point client review has to move to preview deploys: `npx vercel` without
+`--prod` gives its own URL and leaves production alone. Re-read this section when
+the domain moves.
+
+### Deploying
 
 ```bash
-git checkout main && git pull        # ship main, not whatever is lying around
-git status                           # must be clean; stash or commit first
+git status                           # know what is in the tree; commit or stash first
 npm run build                        # regenerate dist/
-npx vercel --prod                    # publish
+npx vercel --prod                    # deploy to the review URL
 ```
 
-Then verify against the live URL rather than trusting the deploy output, because a
+Deploying `main` is the default, but deploying a branch is fine and often the point.
+The hazard is not which branch, it is deploying a **stale or half-finished tree by
+accident**, which silently reverts live content to older copy. That has already
+happened in both directions in a single day. Know what is in the working directory
+before you deploy it.
+
+Verify against the live URL rather than trusting the deploy output, since a
 successful deploy of the wrong content still reports success:
 
 ```bash
 curl -s https://wilwoodwebsite.vercel.app | grep -c Macchiato
 ```
 
-A deploy is not finished until the live page has been checked. If you deploy from a
-branch rather than `main` for a genuine reason, say so explicitly, and get `main`
-caught up straight after so the next person's deploy does not undo it.
-
-Preview deploys do not need the GitHub integration either. `npx vercel` without
-`--prod` publishes to its own URL and leaves production untouched, which is the way
-to get client sign-off on copy before it goes live.
+A deploy is not finished until the live page has been checked. If you deployed a
+branch, get `main` caught up reasonably soon, so the next person deploying from a
+clean checkout does not quietly undo it.
 
 ## Not to be confused with the client's live site
 

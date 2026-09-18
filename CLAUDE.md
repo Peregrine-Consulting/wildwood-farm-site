@@ -90,9 +90,26 @@ to get client sign-off on copy before it goes live.
 
 ## Not to be confused with the client's live site
 
-`recoveryatwildwoodfarm.com` is the client's existing **Wix** site. It is unrelated
-to this repository, is not served from it, and must never be assumed to be a deploy
-target. This repo is the rebuild concept.
+`recoveryatwildwoodfarm.com` currently serves the client's existing **Wix** site. It
+is not served from this repository today, so do not assume a change here reaches it.
+
+**That is the intended destination, though.** The plan as of 17 September 2026 is to
+point `recoveryatwildwoodfarm.com` at this Vercel project and retire the Wix setup.
+The site is already built for it: every page's `rel="canonical"` and `og:url`, the
+sitemap and `robots.txt` all reference `recoveryatwildwoodfarm.com` rather than the
+`.vercel.app` URL. Nothing in the markup needs changing at launch.
+
+One present-day consequence: because canonicals point at the live domain, the
+`.vercel.app` copy tells search engines the authoritative version lives elsewhere.
+That is the desired behaviour while this is a preview, and it becomes correct
+automatically once the domain moves. Do not "fix" canonicals to point at the
+`.vercel.app` host.
+
+Cutting over is a DNS change at the registrar plus adding the domain in the Vercel
+project, not a code change. Before it happens, the items under **Known outstanding
+work** stop being nice-to-haves: the consultation page is phone-only with no form
+handler or contact email, Dr. Hinkley's rewritten bio is unsigned-off, and the
+clinical, licensing and privacy language is unreviewed.
 
 ## Layout
 

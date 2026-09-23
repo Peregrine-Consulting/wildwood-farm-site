@@ -195,6 +195,34 @@ h1 + .lede, h2 + .lede { margin-top: var(--s-3); }
 .site-footer .social a { text-decoration: none; border-bottom: 1px solid color-mix(in oklch, var(--paper) 45%, transparent); padding-bottom: 2px; }
 .site-footer .social a:hover { border-bottom-color: var(--paper); }
 
+/* ---------- the Wildwood Method ---------- */
+.method__tabs { display: flex; flex-wrap: wrap; gap: var(--s-2); margin: var(--s-5) 0 var(--s-4); }
+.method__tab {
+  font-family: var(--font-body); font-size: var(--step--1); letter-spacing: 0.08em;
+  color: var(--ink-soft); background: transparent;
+  border: 1px solid var(--paper-edge); border-radius: var(--radius-pill);
+  padding: var(--s-2) var(--s-4); cursor: pointer;
+  transition: color 0.2s var(--ease-out), border-color 0.2s var(--ease-out), background-color 0.2s var(--ease-out);
+}
+.method__tab:hover { color: var(--ink-strong); border-color: var(--green); }
+.method__tab.is-active { color: var(--paper); background: var(--green-deep); border-color: var(--green-deep); }
+.method__tab:focus-visible { outline: 2px solid var(--blue-deep); outline-offset: 2px; }
+.method__panel {
+  background: var(--green-wash); border-radius: var(--radius-soft);
+  padding: var(--s-5); min-height: 11rem;
+}
+.method__panel:focus-visible { outline: 2px solid var(--blue-deep); outline-offset: 2px; }
+.method__num {
+  font-size: var(--step--1); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--green-deep); margin: 0 0 var(--s-2);
+}
+.method__head { font-size: var(--step-2); margin: 0 0 var(--s-3); }
+.method__sub { color: var(--ink); margin: 0; max-width: 46ch; }
+/* Without the script the list simply reads as a numbered list. */
+.method__list { padding-left: var(--s-5); }
+.method__list h3 { font-size: var(--step-1); margin: var(--s-4) 0 var(--s-1); }
+@media (max-width: 46rem) { .method__panel { padding: var(--s-4); min-height: 13rem; } }
+
 /* ---------- full-bleed imagery ---------- */
 .bleed { width: 100vw; margin-left: calc(50% - 50vw); max-width: none; }
 .feature-img {
